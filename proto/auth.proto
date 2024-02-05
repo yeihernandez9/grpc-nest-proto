@@ -33,7 +33,7 @@ message LoginResponse {
   string message = 2;
   oneof user_content {
     user_string = 3;
-  }
+  };
   string token = 4;
   repeated string error = 5;
   
