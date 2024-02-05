@@ -3,9 +3,8 @@ syntax = "proto3";
 package auth;
 
 service AuthService {
-  rpc Register (RegisterRequest) returns (RegisterResponse) {}
-  rpc Login (LoginRequest) returns (LoginResponse) {}
-  rpc Validate (ValidateRequest) returns (ValidateResponse) {}
+  rpc Signup (RegisterRequest) returns (RegisterResponse) {}
+  rpc Signin (LoginRequest) returns (LoginResponse) {}
 }
 
 // Register
@@ -16,8 +15,7 @@ message RegisterRequest {
 }
 
 message RegisterResponse {
-  int32 status = 1;
-  repeated string error = 2;
+  string data = 1;
 }
 
 // Login
@@ -28,19 +26,5 @@ message LoginRequest {
 }
 
 message LoginResponse {
-  int32 status = 1;
-  repeated string error = 2;
-  string token = 3;
-}
-
-// Validate
-
-message ValidateRequest {
-  string token = 1;
-}
-
-message ValidateResponse {
-  int32 status = 1;
-  repeated string error = 2;
-  int32 userId = 3;
+  string data = 1;
 }
