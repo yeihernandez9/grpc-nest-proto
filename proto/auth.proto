@@ -32,7 +32,7 @@ message LoginResponse {
   int32 status = 1;
   string message = 2;
   oneof user_content {
-    user_string = 3;
+    user = 3;
   };
   string token = 4;
   repeated string error = 5;
