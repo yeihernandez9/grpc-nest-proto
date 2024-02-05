@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package auth;
 
+import "google/protobuf/wrappers.proto";
+
 service AuthService {
   rpc Signup (RegisterRequest) returns (RegisterResponse) {}
   rpc Signin (LoginRequest) returns (LoginResponse) {}
@@ -31,7 +33,7 @@ message LoginRequest {
 message LoginResponse {
   int32 status = 1;
   string message = 2;
-  string user = 3;
+  google.protobuf.Value user = 3;
   string token = 4;
   repeated string error = 5;
   
