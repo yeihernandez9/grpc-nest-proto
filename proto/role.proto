@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package auth;
+package role;
 
 service RoleService {
   rpc Create (CreateRoleRequest) returns (CreateRoleResponse) {}
