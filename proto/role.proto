@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package auth;
+
+service RoleService {
+  rpc Create (CreateRoleRequest) returns (CreateRoleResponse) {}
+}
+
+// Create
+
+message CreateRoleRequest {
+  string name = 1;
+  string description = 2;
+}
+
+message CreateRoleResponse {
+  int32 status = 1;
+  string message = 2;
+  string role = 3;
+  repeated string error = 4;
+}
+
